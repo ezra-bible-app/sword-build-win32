@@ -7,15 +7,17 @@ jobs:
         name: Build Sword Windows binaries
         runs-on: windows-latest
         steps:
-        - uses: actions/checkout@v1
         - uses: ilammy/msvc-dev-cmd@v1
+        - uses: actions/checkout@v1
         - uses: actions/checkout@v2
         - name: Checkout submodules
           shell: bash
           run: |
             auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+            git lfs install --skip-smudge
             git submodule init
             git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
+            git lfs install --force
         - name: Build zlib
           run: powershell .\build_zlib.bat
         - name: Build lzma
