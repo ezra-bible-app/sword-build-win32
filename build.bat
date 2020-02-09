@@ -1,5 +1,5 @@
 REM *** ZLIB ***
 
 mkdir zlib\build
-cmake -B zlib\build zlib
-devenv zlib\build\zlib.sln /Build Release
+cmake -B zlib\build -G "NMake Makefiles" zlib
+(cd zlib\build && nmake)

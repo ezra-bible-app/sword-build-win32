@@ -7,8 +7,9 @@ jobs:
         name: Build Sword Windows binaries
         runs-on: windows-latest
         steps:
-        - uses: actions/checkout@v1        
+        - uses: actions/checkout@v1
         - uses: actions/checkout@v2
+        - uses: ilammy/msvc-dev-cmd@v1
         - name: Checkout submodules
           shell: bash
           run: |
