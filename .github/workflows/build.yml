@@ -23,17 +23,12 @@ jobs:
           run: |
             mkdir output
         - name: Build zlib
-          shell: cmd
-          run: call build_zlib.bat output
+          run: powershell .\build_zlib.bat output
         - name: Build lzma
-          shell: cmd
-          run: call build_xz.bat output
+          run: powershell .\build_xz.bat output
         - name: Build bzip2
-          shell: cmd
-          run: call build_bzip2.bat output
+          run: powershell .\build_bzip2.bat output
         - name: Build curl
-          shell: cmd
-          run: call build_curl.bat output
+          run: powershell .\build_curl.bat output
         - name: Build icu
-          shell: cmd
-          run: call build_icu.bat output
+          run: powershell .\build_icu.bat output
