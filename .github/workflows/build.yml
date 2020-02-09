@@ -11,4 +11,4 @@ jobs:
 #        - name: Install Windows build tools
 #          run: powershell npm install windows-build-tools --vs2015
         - name: Build
-          run: powershell build.bat
+          run: powershell .\build.bat
