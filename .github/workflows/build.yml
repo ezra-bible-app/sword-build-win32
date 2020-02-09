@@ -23,15 +23,15 @@ jobs:
           run: |
             mkdir output
         - name: Build zlib
-          run: powershell .\build_zlib.bat output
+          run: powershell .\build_zlib.bat v1.2.9 output
         - name: Build lzma
-          run: powershell .\build_xz.bat output
+          run: powershell .\build_xz.bat v5.2.4 output
         - name: Build bzip2
-          run: powershell .\build_bzip2.bat output
+          run: powershell .\build_bzip2.bat bzip2-1.0.8 output
         - name: Build curl
-          run: powershell .\build_curl.bat output
+          run: powershell .\build_curl.bat curl-7_68_0 output
         - name: Build icu
-          run: powershell .\build_icu.bat output
+          run: powershell .\build_icu.bat release-63-2 output
         #- name: Build sword
         #  run: powershell .\build_sword.bat output
         - name: Upload artifacts
