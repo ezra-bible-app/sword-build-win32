@@ -19,5 +19,7 @@ jobs:
             
 #        - name: Install Windows build tools
 #          run: powershell npm install windows-build-tools --vs2015
-        - name: Build
-          run: powershell .\build.bat
+        - name: Build zlib
+          run: powershell .\build_zlib.bat
+        - name: Build liblzma
+          run: powershell .\build_xz.bat
