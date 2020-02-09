@@ -10,3 +10,6 @@
 [submodule "curl"]
 	path = curl
 	url = https://github.com/curl/curl.git
+[submodule "icu"]
+	path = icu
+	url = https://github.com/unicode-org/icu.git
