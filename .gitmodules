@@ -4,3 +4,6 @@
 [submodule "xz"]
 	path = xz
 	url = https://git.tukaani.org/xz.git
+[submodule "bzip2"]
+	path = bzip2
+	url = git://sourceware.org/git/bzip2.git
