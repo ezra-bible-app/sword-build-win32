@@ -32,5 +32,10 @@ jobs:
           run: powershell .\build_curl.bat output
         - name: Build icu
           run: powershell .\build_icu.bat output
-        - name: Build sword
-          run: powershell .\build_sword.bat output
+        #- name: Build sword
+        #  run: powershell .\build_sword.bat output
+        - name: Upload artifacts
+          uses: actions/upload-artifact@master
+          with:
+            name: sword-deps-latest
+            path: output
