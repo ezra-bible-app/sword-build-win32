@@ -1,6 +1,5 @@
 REM *** SWORD ***
 
-
 set argC=0
 for %%x in (%*) do Set /A argC+=1
 
@@ -21,3 +20,4 @@ cmake -B sword\build -G "Visual Studio %VS%" -A Win32 ^
       sword
 
 devenv sword\build\libsword.sln /Build Release /Project sword
+copy sword\build\Release\* %1\
