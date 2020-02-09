@@ -8,14 +8,11 @@ jobs:
         runs-on: windows-latest
         steps:
         - uses: actions/checkout@v1
-        - uses: actions/checkout@v2
         - uses: ilammy/msvc-dev-cmd@v1
         - name: Checkout submodules
-          shell: bash
-          run: |
-            auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-            git submodule init
-            git -c "http.extraheader=$auth_header" submodule update
+          uses: textbook/git-checkout-submodule-action@master
+          with:
+            remote: true
         - name: Build zlib
           run: powershell .\build_zlib.bat
         - name: Build lzma
@@ -24,3 +21,5 @@ jobs:
           run: powershell .\build_bzip2.bat
         - name: Build curl
           run: powershell .\build_curl.bat
+        - name: Build icu
+          run: powershell .\build_icu.bat
