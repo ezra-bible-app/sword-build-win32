@@ -18,13 +18,17 @@ jobs:
             git submodule init
             git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
             git lfs install --force
+        - name: Create output dir
+          shell: cmd
+          run: |
+            mkdir output
         - name: Build zlib
-          run: powershell .\build_zlib.bat
+          run: powershell .\build_zlib.bat output
         - name: Build lzma
-          run: powershell .\build_xz.bat
+          run: powershell .\build_xz.bat output
         - name: Build bzip2
-          run: powershell .\build_bzip2.bat
+          run: powershell .\build_bzip2.bat output
         - name: Build curl
-          run: powershell .\build_curl.bat
+          run: powershell .\build_curl.bat output
         - name: Build icu
-          run: powershell .\build_icu.bat
+          run: powershell .\build_icu.bat output
