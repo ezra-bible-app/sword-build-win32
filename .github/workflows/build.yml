@@ -8,11 +8,11 @@ jobs:
         runs-on: windows-latest
         steps:
         - uses: actions/checkout@v1
+        - uses: ilammy/msvc-dev-cmd@v1
         - name: Checkout submodules
         - uses: srt32/git-actions@v0.0.3
           with:
             args: git submodule update --init --recursive
-        - uses: ilammy/msvc-dev-cmd@v1
         - name: Build zlib
           run: powershell .\build_zlib.bat
         - name: Build lzma
