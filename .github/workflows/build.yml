@@ -16,12 +16,11 @@ jobs:
             auth_header="$(git config --local --get http.https://github.com/.extraheader)"
             git submodule init
             git -c "http.extraheader=$auth_header" submodule update
-            
-#        - name: Install Windows build tools
-#          run: powershell npm install windows-build-tools --vs2015
         - name: Build zlib
           run: powershell .\build_zlib.bat
         - name: Build lzma
           run: powershell .\build_xz.bat
         - name: Build bzip2
           run: powershell .\build_bzip2.bat
+        - name: Build curl
+          run: powershell .\build_curl.bat
