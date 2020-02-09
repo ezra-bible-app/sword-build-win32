@@ -14,7 +14,7 @@ jobs:
           shell: bash
           run: |
             auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-            git submodule sync --recursive
+            git submodule init
             git -c "http.extraheader=$auth_header" submodule update
             
 #        - name: Install Windows build tools
