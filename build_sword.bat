@@ -10,14 +10,14 @@ del /s /f /q sword\build
 mkdir sword\build
 
 cmake -B sword\build -G "Visual Studio %VS%" -A Win32 ^
-      -DBZIP2_LIBRARY=output\libbz2.dll ^
-      -DBZIP2_INCLUDE_DIR=bzip2 ^
-      -DXZ_LIBRARY=output\liblzma.dll ^
-      -DXZ_INCLUDE_DIR=xz\src\liblzma\api ^
-      -DICU_LIBRARY=icu\icu4c\bin\ ^
-      -DICU_INCLUDE_DIR=icu\icu4c\include ^
-      -DCURL_LIBRARY=output\libcurl.dll ^
-      -DCURL_INCLUDE_DIR=curl\include ^
+      -DBZIP2_LIBRARY=%cd%\output\libbz2.lib ^
+      -DBZIP2_INCLUDE_DIR=%cd%\bzip2 ^
+      -DXZ_LIBRARY=%cd%\output\liblzma.lib ^
+      -DXZ_INCLUDE_DIR=%cd%\xz\src\liblzma\api ^
+      -DICU_LIBRARY=%cd%\output\icudt.lib;%cd%\output\icuin.lib;%cd%\output\icuio.lib;%cd%\output\icuuc.lib ^
+      -DICU_INCLUDE_DIR=%cd%\icu\icu4c\include ^
+      -DCURL_LIBRARY=%cd%\output\libcurl_imp.lib ^
+      -DCURL_INCLUDE_DIR=%cd%\curl\include ^
       sword
 
-msbuild sword\build\libsword.sln /p:Configuration=Release /p:Platform="Win32"
+devenv sword\build\libsword.sln /Build Release /Project sword
