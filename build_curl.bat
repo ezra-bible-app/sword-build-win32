@@ -3,7 +3,10 @@ REM *** CURL ***
 del /s /f /q curl\build
 mkdir curl\build
 
-if (%2=="") (
+set argC=0
+for %%x in (%*) do Set /A argC+=1
+
+if %argC% equ 1 (
     cmake -B curl\build -G "Visual Studio 16 2019" -A Win32 curl
 ) else (
     cmake -B curl\build -G "Visual Studio %2" -A Win32 curl
