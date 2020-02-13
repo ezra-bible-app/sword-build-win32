@@ -20,6 +20,7 @@ jobs:
             git lfs install --force
         - name: Build libraries
           run: powershell .\build_all.bat
+        - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
             name: sword-deps-latest
