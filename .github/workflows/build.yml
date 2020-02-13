@@ -1,10 +1,10 @@
-name: Build Sword binaries
+name: Build Sword Windows dependencies
 
 on: [ repository_dispatch, push ]
 
 jobs:
     build-win32:
-        name: Build Sword Windows binaries
+        name: Build Sword Windows dependencies
         runs-on: windows-latest
         steps:
         - uses: ilammy/msvc-dev-cmd@v1
@@ -18,23 +18,8 @@ jobs:
             git submodule init
             git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
             git lfs install --force
-        - name: Create output dir
-          shell: cmd
-          run: |
-            mkdir output
-        - name: Build zlib
-          run: powershell .\build_zlib.bat v1.2.9 output
-        - name: Build lzma
-          run: powershell .\build_xz.bat v5.2.4 output
-        - name: Build bzip2
-          run: powershell .\build_bzip2.bat bzip2-1.0.8 output
-        - name: Build curl
-          run: powershell .\build_curl.bat curl-7_68_0 output
-        - name: Build icu
-          run: powershell .\build_icu.bat release-63-2 output
-        #- name: Build sword
-        #  run: powershell .\build_sword.bat output
-        - name: Upload artifacts
+        - name: Build libraries
+          run: powershell .\build_all.bat
           uses: actions/upload-artifact@master
           with:
             name: sword-deps-latest
