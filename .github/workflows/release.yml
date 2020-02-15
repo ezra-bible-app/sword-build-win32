@@ -2,7 +2,7 @@ on:
   release:
     types: [created]
 
-name: Publish binaries
+name: Build and publish binaries
 jobs:
   build-win32:
     name: Build Sword Windows dependencies
@@ -28,14 +28,14 @@ jobs:
         path: output
 
   release-win32:
-    name: Build and publish Sword Windows dependencies
+    name: Publish Sword Windows dependencies
+    needs: build-win32
     runs-on: windows-latest
     steps:
     - name: Download artifacts
     - uses: actions/download-artifact@master
       with:
         name: sword-deps-latest
-        path: output
 
     - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
