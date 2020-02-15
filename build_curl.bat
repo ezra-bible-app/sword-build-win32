@@ -15,4 +15,5 @@ if %argC% equ 3 (
 )
 
 devenv curl\build\curl.sln /Build Release
-copy curl\build\lib\Release\* %2\
+copy curl\build\lib\Release\*.dll %2\
+copy curl\build\lib\Release\*.lib %2\
