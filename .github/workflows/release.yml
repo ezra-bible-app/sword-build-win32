@@ -36,9 +36,14 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: sword-deps-release
+    - name: Zip artifacts for publishing
+      shell: bash
+      run: |
+        mv sword-deps-release sword-deps-release-${GITHUB_REF##*/}
+        zip -9 -r sword-deps-release-${GITHUB_REF##*/}.zip sword-deps-release*
     - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'sword-deps-release/*'
+        args: 'sword-deps-release*.zip'
