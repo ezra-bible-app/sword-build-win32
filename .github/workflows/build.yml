@@ -1,10 +1,10 @@
-name: Build Sword Windows dependencies
+name: Build Sword Windows binaries
 
 on: [ repository_dispatch, push ]
 
 jobs:
     build-win32:
-        name: Build Sword and its dependencies for Win32
+        name: Build Sword & dependencies for Win32
         runs-on: windows-latest
         steps:
         - uses: ilammy/msvc-dev-cmd@v1
@@ -38,5 +38,5 @@ jobs:
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
-            name: sword-deps-latest
-            path: output
+            name: sword-win32-build-latest
+            path: build\lib
