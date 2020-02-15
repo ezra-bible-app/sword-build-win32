@@ -24,18 +24,18 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
-        name: sword-deps-latest
+        name: sword-deps-release
         path: output
 
   release-win32:
     name: Publish Sword Windows dependencies
     needs: build-win32
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Download artifacts
       uses: actions/download-artifact@master
       with:
-        name: sword-deps-latest
+        name: sword-deps-release
     - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
       env:
