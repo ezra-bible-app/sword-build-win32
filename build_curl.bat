@@ -9,7 +9,9 @@ set argC=0
 for %%x in (%*) do Set /A argC+=1
 
 if %argC% equ 3 (
-    cmake -B curl\build -G "Visual Studio %3" -A Win32 curl
+    set VS=%3
+    set VS=%VS:"=%
+    cmake -B curl\build -G "Visual Studio %VS%" -A Win32 curl
 ) else (
     cmake -B curl\build -G "Visual Studio 16 2019" -A Win32 curl
 )
