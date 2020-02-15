@@ -18,6 +18,9 @@ jobs:
             git submodule init
             git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
             git lfs install --force
+        - name: Create build directories
+          shell: cmd
+          run: |
             mkdir build
             mkdir build\lib
         - name: Build zlib
