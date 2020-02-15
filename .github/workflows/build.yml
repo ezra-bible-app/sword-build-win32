@@ -4,7 +4,7 @@ on: [ repository_dispatch, push ]
 
 jobs:
     build-win32:
-        name: Build Sword Windows dependencies
+        name: Build Sword and its dependencies for Win32
         runs-on: windows-latest
         steps:
         - uses: ilammy/msvc-dev-cmd@v1
@@ -18,8 +18,20 @@ jobs:
             git submodule init
             git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
             git lfs install --force
-        - name: Build libraries
-          run: powershell .\build_all.bat
+            mkdir build
+            mkdir build\lib
+        - name: Build zlib
+          run: powershell .\build_zlib.bat v1.2.9 build\lib
+        - name: Build xz
+          run: powershell .\build_xz.bat v5.2.4 build\lib
+        - name: Build bzip2
+          run: powershell .\build_bzip2.bat bzip2-1.0.8 build\lib
+        - name: Build curl
+          run: powershell .\build_curl.bat curl-7_68_0 build\lib
+        - name: Build icu
+          run: powershell .\build_icu.bat release-65-1 build\lib
+        - name: Build sword
+          run: powershell .\build_sword.bat e34fd3 build\lib
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
