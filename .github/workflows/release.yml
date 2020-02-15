@@ -1,0 +1,29 @@
+on:
+  release:
+    types: [created]
+
+name: Publish binaries
+jobs:
+  release-win32:
+    name: Build and publish Sword Windows dependencies
+    runs-on: windows-latest
+    steps:
+    - uses: ilammy/msvc-dev-cmd@v1
+    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - name: Checkout submodules
+      shell: bash
+      run: |
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git lfs install --skip-smudge
+        git submodule init
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
+        git lfs install --force
+    - name: Build libraries
+      run: powershell .\build_all.bat
+    - name: Upload artifacts
+      uses: skx/github-action-publish-binaries@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: 'output/*'
