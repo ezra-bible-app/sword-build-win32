@@ -21,7 +21,7 @@ jobs:
         git lfs install --force
     - name: Build libraries
       run: powershell .\build_all.bat
-    - name: Upload artifacts
+    - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
