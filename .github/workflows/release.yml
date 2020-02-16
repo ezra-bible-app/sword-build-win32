@@ -24,7 +24,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
-        name: sword-win32-build-release
+        name: sword-build-win32-release
         path: build\lib
 
   release-win32:
@@ -35,15 +35,15 @@ jobs:
     - name: Download artifacts
       uses: actions/download-artifact@master
       with:
-        name: sword-win32-build-release
+        name: sword-build-win32-release
     - name: Zip artifacts for publishing
       shell: bash
       run: |
-        mv sword-win32-build-release sword-win32-build-${GITHUB_REF##*/}
-        zip -9 -r sword-win32-build-${GITHUB_REF##*/}.zip sword-win32-build*
+        mv sword-build-win32-release sword-build-win32-${GITHUB_REF##*/}
+        zip -9 -r sword-build-win32-${GITHUB_REF##*/}.zip sword-build-win32*
     - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'sword-win32-build-*.zip'
+        args: 'sword-build-win32-*.zip'

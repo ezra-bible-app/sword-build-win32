@@ -38,5 +38,5 @@ jobs:
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
-            name: sword-win32-build-latest
+            name: sword-build-win32-latest
             path: build\lib
