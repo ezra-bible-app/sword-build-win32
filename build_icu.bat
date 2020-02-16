@@ -17,7 +17,3 @@ copy icu\icu4c\bin\icudt*.dll %2\
 copy icu\icu4c\lib\icuin.lib %2\
 copy icu\icu4c\lib\icuuc.lib %2\
 copy icu\icu4c\lib\icudt.lib %2\
-
-copy icu\icu4c\lib\icuin.pdb %2\
-copy icu\icu4c\lib\icuuc.pdb %2\
-copy icu\icu4c\lib\icudt.pdb %2\
