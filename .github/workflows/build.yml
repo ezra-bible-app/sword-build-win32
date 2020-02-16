@@ -21,22 +21,26 @@ jobs:
         - name: Create build directories
           shell: cmd
           run: |
-            mkdir build
-            mkdir build\lib
+            mkdir dist
+            mkdir dist\lib
         - name: Build zlib
-          run: powershell .\build_zlib.bat v1.2.9 build\lib
+          run: powershell .\build_zlib.bat v1.2.9 dist\lib
         - name: Build xz
-          run: powershell .\build_xz.bat v5.2.4 build\lib
+          run: powershell .\build_xz.bat v5.2.4 dist\lib
         - name: Build bzip2
-          run: powershell .\build_bzip2.bat bzip2-1.0.8 build\lib
+          run: powershell .\build_bzip2.bat bzip2-1.0.8 dist\lib
         - name: Build curl
-          run: powershell .\build_curl.bat curl-7_68_0 build\lib
+          run: powershell .\build_curl.bat curl-7_68_0 dist\lib
         - name: Build icu
-          run: powershell .\build_icu.bat release-65-1 build\lib
+          run: powershell .\build_icu.bat release-65-1 dist\lib
         - name: Build sword
-          run: powershell .\build_sword.bat e34fd3 build\lib
+          run: powershell .\build_sword.bat e34fd3 dist\lib
+        - name: Copy sword headers
+          shell: cmd
+          run: |
+            xcopy sword\include dist\include /E
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
             name: sword-build-win32-latest
-            path: build\lib
+            path: dist
