@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: sword-build-win32-release
-        path: build\lib
+        path: dist
 
   release-win32:
     name: Publish Sword Windows binaries
