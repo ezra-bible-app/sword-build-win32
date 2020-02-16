@@ -9,4 +9,4 @@ call build_curl.bat curl-7_68_0 dist\lib
 call build_icu.bat release-65-1 dist\lib
 call build_sword.bat e34fd3 dist\lib
 
-xcopy sword\include dist\include /E/H
+xcopy sword\include dist\include /E /I

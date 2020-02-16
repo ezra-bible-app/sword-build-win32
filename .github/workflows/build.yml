@@ -38,7 +38,7 @@ jobs:
         - name: Copy sword headers
           shell: cmd
           run: |
-            xcopy sword\include dist\include /E
+            xcopy sword\include dist\include /E /I
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:
