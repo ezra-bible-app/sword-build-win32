@@ -33,13 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download artifacts
-      uses: actions/download-artifact@master
+      uses: actions/download-artifact@v1.0.0
       with:
         name: sword-build-win32-release
     - name: Zip artifacts for publishing
       shell: bash
       run: |
-        mv sword-build-win32 sword-build-win32-${GITHUB_REF##*/}
+        mv sword-build-win32-release sword-build-win32-${GITHUB_REF##*/}
         zip -9 -r sword-build-win32-${GITHUB_REF##*/}.zip sword-build-win32*
     - name: Publish artifacts
       uses: skx/github-action-publish-binaries@master
