@@ -40,7 +40,7 @@ jobs:
           run: |
             xcopy sword\include dist\include /E /I
         - name: Upload artifacts
-          uses: actions/upload-artifact@master
+          uses: actions/upload-artifact@v1.0.0
           with:
             name: sword-build-win32-latest
             path: dist
