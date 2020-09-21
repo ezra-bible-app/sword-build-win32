@@ -16,6 +16,7 @@ if %argC% equ 3 (
 )
 
 cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
+      -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ^
       -DBZIP2_LIBRARY=%cd%\%2\libbz2.lib ^
       -DBZIP2_INCLUDE_DIR=%cd%\bzip2 ^
       -DXZ_LIBRARY=%cd%\%2\liblzma.lib ^
