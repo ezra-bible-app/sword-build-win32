@@ -16,7 +16,11 @@ Furthermore, when a release is created, binaries are automatically uploaded as r
 
 ## Linking against sword.dll
 
+### Definition SWUSINGDLL
+
 When linking against sword.dll you need to have the define `SWUSINGDLL` set in your application's build environment. This ensures that symbols are being imported correctly (see [defs.h](https://github.com/bibletime/crosswire-sword-mirror/blob/trunk/include/defs.h#L68) in SWORD headers).
+
+### List of libraries to link against (SWORD and Dependencies)
 
 This is a sample list of libraries to link against (example from [node-sword-interface](https://github.com/tobias-klein/node-sword-interface), note that the syntax is *node-gyp* specific):
 
@@ -32,6 +36,8 @@ This is a sample list of libraries to link against (example from [node-sword-int
     '-lcrypt32.lib',
     '-lNormaliz.lib'
 
-Besides providing the list of linked libraries you also need to make sure that the include directory is configured correctly, see this example from [node-sword-interface](https://github.com/tobias-klein/node-sword-interface), note that the syntax is *node-gyp* specific):
+### Include paths
+
+Besides providing the list of linked libraries you also need to make sure that the include path is configured correctly, see this example from [node-sword-interface](https://github.com/tobias-klein/node-sword-interface), note that the syntax is *node-gyp* specific):
 
     "<(module_root_dir)/build/sword-build-win32/include"
