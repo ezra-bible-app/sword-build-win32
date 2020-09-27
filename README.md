@@ -36,8 +36,8 @@ This is a sample list of libraries to link against (example from [node-sword-int
     '-lcrypt32.lib',
     '-lNormaliz.lib'
 
-### Include paths
+### Include path
 
-Besides providing the list of linked libraries you also need to make sure that the include path is configured correctly, see this example from [node-sword-interface](https://github.com/tobias-klein/node-sword-interface), note that the syntax is *node-gyp* specific):
+Besides providing the list of linked libraries you also need to make sure that the include path is configured correctly, see this example from [node-sword-interface](https://github.com/tobias-klein/node-sword-interface), note that the syntax is *node-gyp* specific:
 
     "<(module_root_dir)/build/sword-build-win32/include"
