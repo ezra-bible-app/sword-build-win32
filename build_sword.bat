@@ -22,7 +22,7 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       -DBZIP2_INCLUDE_DIR=%cd%\bzip2 ^
       -DXZ_LIBRARY=%cd%\%2\liblzma.lib ^
       -DXZ_INCLUDE_DIR=%cd%\xz\src\liblzma\api ^
-      -DICU_ROOT=%cd%\icu ^
+      -DICU_ROOT=%cd%\icu\icu4c ^
       -DICU_INCLUDE_DIR=%cd%\icu\icu4c\include ^
       -DCURL_LIBRARY=%cd%\%2\libcurl_imp.lib ^
       -DCURL_INCLUDE_DIR=%cd%\curl\include ^
