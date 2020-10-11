@@ -28,4 +28,5 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       sword
 
 devenv build\sword\libsword.sln /Build Release /Project sword
+dir build\sword\Release\
 copy build\sword\Release\* %2\
