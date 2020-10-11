@@ -13,4 +13,3 @@ dir bzip2\
 dir bzip2\Release
 copy bzip2\libbz2.dll %2\
 copy bzip2\Release\libbz2.lib %2\
-copy bzip2\Release\libbz2.pdb %2\

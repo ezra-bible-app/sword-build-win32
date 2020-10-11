@@ -16,7 +16,7 @@ if %argC% equ 3 (
     cmake -B build\curl -G "Visual Studio 16 2019" -A Win32 curl
 )
 
-devenv build\curl\curl.sln /Build Release /Project libcurl /DEBUG:FULL
+devenv build\curl\curl.sln /Build Release /Project libcurl
 dir build\curl\lib\Release\
 copy build\curl\lib\Release\*.dll %2\
 copy build\curl\lib\Release\*.lib %2\

@@ -12,9 +12,7 @@ msbuild xz\windows\vs2017\xz_win.sln ^
         /p:Platform="Win32" ^
         /p:PlatformToolset=%TOOLSET% ^
         /p:TargetPlatformVersion=10.0.17763.0 ^
-        /p:PreferredToolArchitecture=Win32 ^
-        /p:DebugSymbols=true ^
-        /p:DebugType=full
+        /p:PreferredToolArchitecture=Win32
 
 dir xz\windows\vs2017\Release\Win32\liblzma_dll\
 copy xz\windows\vs2017\Release\Win32\liblzma_dll\liblzma.dll %2\
