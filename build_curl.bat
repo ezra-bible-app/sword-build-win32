@@ -17,5 +17,6 @@ if %argC% equ 3 (
 )
 
 devenv build\curl\curl.sln /Build Release /Project libcurl
+dir build\curl\lib\Release\
 copy build\curl\lib\Release\*.dll %2\
 copy build\curl\lib\Release\*.lib %2\

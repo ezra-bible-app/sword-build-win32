@@ -17,5 +17,6 @@ if %argC% equ 3 (
 )
 
 devenv build\zlib\zlib.sln /Build Release /Project zlib
+dir build\zlib\Release\
 copy build\zlib\Release\zlib.dll %2\
 copy build\zlib\Release\zlib.lib %2\
