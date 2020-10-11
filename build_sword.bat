@@ -29,4 +29,6 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
 
 devenv build\sword\libsword.sln /Build Debug /Project sword
 dir build\sword\Debug\
-copy build\sword\Debug\* %2\
+copy build\sword\Debug\sword.dll %2\
+copy build\sword\Debug\sword.lib %2\
+copy build\sword\Debug\sword.pdb %2\
