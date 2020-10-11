@@ -8,7 +8,14 @@ for %%x in (%*) do Set /A argC+=1
 if %argC% equ 3 (set TOOLSET=%3) else (set TOOLSET="v142")
 
 devenv icu\icu4c\source\allinone\allinone.sln /Upgrade
-msbuild icu\icu4c\source\allinone\allinone.sln /p:Configuration=Release /p:Platform="Win32" /p:PlatformToolset=%TOOLSET% /p:TargetPlatformVersion=10.0.17763.0 /p:PreferredToolArchitecture=Win32
+msbuild icu\icu4c\source\allinone\allinone.sln ^
+        /p:Configuration=Release ^
+        /p:Platform="Win32" ^
+        /p:PlatformToolset=%TOOLSET% ^
+        /p:TargetPlatformVersion=10.0.17763.0 ^
+        /p:PreferredToolArchitecture=Win32 ^
+        /p:DebugSymbols=true ^
+        /p:DebugType=full
 
 dir icu\icu4c\bin\
 dir icu\icu4c\lib\

@@ -27,6 +27,6 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       -DCURL_INCLUDE_DIR=%cd%\curl\include ^
       sword
 
-devenv build\sword\libsword.sln /Build Release /Project sword
+devenv build\sword\libsword.sln /Build Release /Project sword /DEBUG:FULL
 dir build\sword\Release\
 copy build\sword\Release\* %2\
