@@ -13,7 +13,9 @@ msbuild icu\icu4c\source\allinone\allinone.sln /p:Configuration=Release /p:Platf
 copy icu\icu4c\bin\icuin*.dll %2\
 copy icu\icu4c\bin\icuuc*.dll %2\
 copy icu\icu4c\bin\icudt*.dll %2\
+copy icu\icu4c\bin\icuio*.dll %2\
 
 copy icu\icu4c\lib\icuin.lib %2\
 copy icu\icu4c\lib\icuuc.lib %2\
 copy icu\icu4c\lib\icudt.lib %2\
+copy icu\icu4c\lib\icuio.lib %2\
