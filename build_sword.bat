@@ -27,6 +27,7 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       -DICU_INCLUDE_DIR=%cd%\icu\icu4c\include ^
       -DCURL_LIBRARY=%cd%\%2\libcurl_imp.lib ^
       -DCURL_INCLUDE_DIR=%cd%\curl\include ^
+      -DCMAKE_BUILD_TYPE=Release ^
       sword
 
 devenv build\sword\libsword.sln /Build Debug /Project sword
