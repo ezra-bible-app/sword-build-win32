@@ -30,8 +30,8 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       -DCMAKE_BUILD_TYPE=Release ^
       sword
 
-devenv build\sword\libsword.sln /Build Debug /Project sword
-dir build\sword\Debug\
-copy build\sword\Debug\sword.dll %2\
-copy build\sword\Debug\sword.lib %2\
-copy build\sword\Debug\sword.pdb %2\
+devenv build\sword\libsword.sln /Build Release /Project sword
+dir build\sword\Release\
+copy build\sword\Release\sword.dll %2\
+copy build\sword\Release\sword.lib %2\
+copy build\sword\Release\sword.pdb %2\
