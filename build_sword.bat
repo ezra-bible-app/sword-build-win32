@@ -34,4 +34,3 @@ devenv build\sword\libsword.sln /Build Release /Project sword
 dir build\sword\Release\
 copy build\sword\Release\sword.dll %2\
 copy build\sword\Release\sword.lib %2\
-copy build\sword\Release\sword.pdb %2\
