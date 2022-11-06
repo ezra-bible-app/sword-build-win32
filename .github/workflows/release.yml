@@ -6,7 +6,7 @@ name: Build and publish binaries
 jobs:
   build-win32:
     name: Build Sword Windows binaries
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
     - uses: ilammy/msvc-dev-cmd@v1
     - uses: actions/checkout@v1
