@@ -5,7 +5,7 @@ on: [ repository_dispatch, push ]
 jobs:
     build-win32:
         name: Build Sword & dependencies for Win32
-        runs-on: windows-latest
+        runs-on: windows-2019
         steps:
         - uses: ilammy/msvc-dev-cmd@v1
         - uses: actions/checkout@v1
