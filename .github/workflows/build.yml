@@ -34,7 +34,7 @@ jobs:
         - name: Build icu
           run: powershell .\build_icu.bat release-65-1 dist\lib
         - name: Build sword
-          run: powershell .\build_sword.bat 1460f9 dist\lib
+          run: powershell .\build_sword.bat 574325 dist\lib
         - name: Copy sword headers
           shell: cmd
           run: |
