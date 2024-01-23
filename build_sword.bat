@@ -25,6 +25,7 @@ cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^
       -DXZ_INCLUDE_DIR=%cd%\xz\src\liblzma\api ^
       -DCURL_LIBRARY=%cd%\%2\libcurl_imp.lib ^
       -DCURL_INCLUDE_DIR=%cd%\curl\include ^
+      -DCURLAVAILABLE=TRUE ^
       -DCMAKE_DISABLE_FIND_PACKAGE_ICU=TRUE ^
       -DCMAKE_BUILD_TYPE=Release ^
       sword
