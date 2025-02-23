@@ -15,4 +15,4 @@
 	url = https://github.com/unicode-org/icu.git
 [submodule "sword"]
 	path = sword
-	url = https://github.com/bibletime/crosswire-sword-mirror.git
+	url = https://github.com/ezra-bible-app/crosswire-sword-mirror.git
