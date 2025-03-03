@@ -32,7 +32,7 @@ jobs:
         - name: Build curl
           run: powershell .\build_curl.bat curl-7_68_0 dist\lib
         - name: Build sword
-          run: powershell .\build_sword.bat 1b1c08 dist\lib
+          run: powershell .\build_sword.bat 895134 dist\lib
         - name: Copy sword headers
           shell: cmd
           run: |

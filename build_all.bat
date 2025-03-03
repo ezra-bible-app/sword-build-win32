@@ -6,6 +6,6 @@ call build_zlib.bat v1.2.9 dist\lib
 call build_xz.bat v5.2.4 dist\lib
 call build_bzip2.bat bzip2-1.0.8 dist\lib
 call build_curl.bat curl-7_68_0 dist\lib
-call build_sword.bat 1b1c08 dist\lib
+call build_sword.bat 895134 dist\lib
 
 xcopy sword\include dist\include /E /I
