@@ -13,7 +13,7 @@ if %argC% equ 3 (
     set VS=%3
     cmake -B build\zlib -G "Visual Studio %VS%" -A Win32 zlib
 ) else (
-    cmake -B build\zlib -G "Visual Studio 16 2019" -A Win32 zlib
+    cmake -B build\zlib -G "Visual Studio 17 2022" -A Win32 zlib
 )
 
 devenv build\zlib\zlib.sln /Build Release /Project zlib

@@ -12,7 +12,7 @@ for %%x in (%*) do Set /A argC+=1
 if %argC% equ 3 (
     set VS=%3
 ) else (
-    set VS="16 2019"
+    set VS=17 2022
 )
 
 cmake -B build\sword -G "Visual Studio %VS%" -A Win32 ^

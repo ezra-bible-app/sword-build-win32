@@ -13,7 +13,7 @@ if %argC% equ 3 (
     set VS=%3
     cmake -B build\curl -G "Visual Studio %VS%" -A Win32 curl
 ) else (
-    cmake -B build\curl -G "Visual Studio 16 2019" -A Win32 curl
+    cmake -B build\curl -G "Visual Studio 17 2022" -A Win32 curl
 )
 
 devenv build\curl\curl.sln /Build Release /Project libcurl
