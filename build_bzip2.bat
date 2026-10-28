@@ -2,14 +2,15 @@ REM *** bzip2 ***
 
 git --git-dir=bzip2/.git checkout %1
 
-set argC=0
-for %%x in (%*) do Set /A argC+=1
+mkdir build
+del /s /f /q build\bzip2
+mkdir build\bzip2
 
-if %argC% equ 3 (set TOOLSET=%3) else (set TOOLSET="v142")
+cl /nologo /O2 /MD /D_CRT_SECURE_NO_WARNINGS /DWIN32 /c /Fobuild\bzip2\ ^
+   bzip2\blocksort.c bzip2\huffman.c bzip2\crctable.c bzip2\randtable.c ^
+   bzip2\compress.c bzip2\decompress.c bzip2\bzlib.c
+link /nologo /DLL /MACHINE:X86 /DEF:bzip2\libbz2.def /OUT:build\bzip2\libbz2.dll /IMPLIB:build\bzip2\libbz2.lib build\bzip2\*.obj
 
-devenv bzip2\libbz2.dsp /Upgrade
-msbuild bzip2\libbz2.vcxproj /p:Configuration=Release /p:Platform="Win32" /p:PlatformToolset=%TOOLSET% /p:TargetPlatformVersion=10.0.17763.0 /p:PreferredToolArchitecture=Win32
-dir bzip2\
-dir bzip2\Release
-copy bzip2\libbz2.dll %2\
-copy bzip2\Release\libbz2.lib %2\
+dir build\bzip2
+copy build\bzip2\libbz2.dll %2\
+copy build\bzip2\libbz2.lib %2\
