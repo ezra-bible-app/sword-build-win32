@@ -52,4 +52,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: 'sword-build-win32-*.zip'
+        allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
